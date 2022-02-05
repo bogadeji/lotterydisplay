@@ -1,9 +1,21 @@
-import React, { useEffect, useState } from "react";;
+import React, { useEffect, useState } from "react";
+
+async function registerUser(data) {
+    console.log(data)
+    return fetch('https://c-sport.tk/api/users/auth/register/', {
+      method: 'POST',
+      mode: 'no-cors',
+      body: JSON.stringify(data)
+    })
+      .then(res => { console.log(res)})
+
+      
+   }
 
 function Signup() {
 
     const registerData = {
-        email: '', firstname: '', lastname: '', password1: '', password2: '', phone: ''
+        email: '', first_name: '', last_name: '', password1: '', password2: '', phone: ''
     }
 
     const [formValues, setFormValues] = useState(registerData );
@@ -19,27 +31,29 @@ function Signup() {
     }
 
     useEffect(() => {
-        console.log(formErrors)
+        // console.log(formErrors)
         if(Object.keys(formErrors).length === 0 && submitForm) {
 
         }
     }, [formErrors, submitForm])
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         // validate(formValues);
         setFormErrors(validate(formValues));
+        const user = await registerUser(formValues)
         setSubmitForm(true)
+
     }
     
     const validate = (values) => {
         const errors = {}
         const emailRegex = /^[^\s@]+a[^\s@]+\.[^\s@]{2,}$/i;
-        if(!values.firstname) {
-            errors.firstname = "First name is required"
+        if(!values.first_name) {
+            errors.first_name = "First name is required"
         }
-        if(!values.lastname) {
-            errors.lastname = "Last name is required"
+        if(!values.last_name) {
+            errors.last_name = "Last name is required"
         }
         if(!values.email) {
             errors.email = "Email is required"
@@ -75,14 +89,14 @@ function Signup() {
                 ) : ''}
                 <div>
                     <div>
-                        <label htmlFor="firstname">First Name</label>
-                        <input name="firstname" type="text" value={formValues.firstname} onChange={handleChange} />
-                        <p>{ formErrors && formErrors.firstname }</p>
+                        <label htmlFor="first_name">First Name</label>
+                        <input name="first_name" type="text" value={formValues.first_name} onChange={handleChange} />
+                        <p>{ formErrors && formErrors.first_name }</p>
                     </div>
                     <div>
-                        <label htmlFor="lastname">Last Name</label>
-                        <input name="lastname" type="text" value={formValues.lastname} onChange={handleChange} />
-                        <p>{ formErrors && formErrors.lastname }</p>
+                        <label htmlFor="last_name">Last Name</label>
+                        <input name="last_name" type="text" value={formValues.last_name} onChange={handleChange} />
+                        <p>{ formErrors && formErrors.last_name }</p>
                     </div>
                 </div>
 
