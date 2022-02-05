@@ -42,6 +42,7 @@ function Signup() {
         // validate(formValues);
         setFormErrors(validate(formValues));
         const user = await registerUser(formValues)
+        console.log(user)
         setSubmitForm(true)
 
     }
