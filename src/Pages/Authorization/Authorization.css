@@ -2,8 +2,6 @@
 .authorization.grid {
     min-height: 100vh;
     display: grid;
-    /* grid-template-areas: 'nav main main main';
-     */
      grid-template-columns: 2fr 5fr;
 
 }
@@ -31,7 +29,7 @@
         --gap: 2rem;
     }
     .routes .page-title {
-        font-size: var(--fs-500);
+        font-size: var(--fs-400);
         color: hsl(var(--clr-secondary))
     }
     .routes form {
@@ -40,7 +38,7 @@
     }
     .routes .form-title {
         color: hsl(var(--clr-secondary));
-        font-size: var(--fs-300);
+        font-size: var(--fs-200);
     }
     .routes .form-heading {
         color: hsl(var(--clr-accent2));
@@ -51,9 +49,30 @@
         --flow-space: 1rem;
     }
     .routes .form-inputs label {
-        font-size: var(--fs-200);
+        font-size: var(--fs-100);
     }
     .routes .form-inputs input {
         color: hsl(var(--clr-accent2));
         font-size: var(--fs-200);
+        margin-top: 5px;
+    }
+    @media (max-width: 390px) {
+        .authorization.grid {
+            min-height: 100vh;
+            display: grid;
+             grid-template-columns: 1fr;
+        
+        }
+        .authorization-page {
+            display: none;
+        }
+
+        .desktop-logo {
+            /* display: none */
+        }
+    }
+    @media (min-width: 391px) {
+        .mobile-logo {
+            display: none
+        }
     }

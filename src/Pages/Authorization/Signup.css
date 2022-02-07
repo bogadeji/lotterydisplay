@@ -1,0 +1,20 @@
+.signup-page {
+    width: 70%;
+}
+.signup-page .terms {
+    font-size: var(--fs-100);
+}
+.signup-page .terms input[type='checkbox'] {
+    /* margin: 0.5rem */
+    height: 0.7rem
+}
+.signup-page .terms > * {
+    margin: 0.5rem
+}
+.signup-page button.signup {
+    margin: 1rem 0
+}
+.signup-page p.signin {
+    font-size: var(--fs-200);
+    /* margin: 2rem 0; */
+}

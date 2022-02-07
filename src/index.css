@@ -22,7 +22,9 @@
       --fs-400: clamp(0.625rem, 1vw + 0.7625rem, 1.125rem);
       --fs-300: clamp(0.725rem, 0.5vw + 1rem, 1rem);
       --fs-200: clamp(0.6rem, 0.5vw + 0.5rem, 0.875rem);
-      --fs-100: clamp(0.5rem, 0.5vw + 0.3rem, 0.625rem);
+      --fs-100: clamp(0.6255rem, 0.5vw + 0.3rem, 0.75rem);
+      --fs-50: clamp(0.5rem, 0.5vw + 0.3rem, 0.625rem);
+
 
   /* Font families */
   /* --ff-sans-cond: 'Montserrat', sans-serif; */
@@ -124,6 +126,7 @@ button {
   padding: 0.125em 2.2em;
   border-radius: 3px;
   font-weight: var(--fw-reg);
+  cursor: pointer;
 }
 
 /* Remove animations for people who turned them off */
@@ -233,8 +236,7 @@ button {
   font-weight: 500;
 }
 .input-group input {
-  height: 40px;
-  height: calc(1.5em + 0.75rem + 2px);
+  height: 30px;
   width: 100%;
   border-radius: 5px;
   border: 1px solid rgb(206,212,218)

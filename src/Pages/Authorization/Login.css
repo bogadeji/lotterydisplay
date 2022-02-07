@@ -6,7 +6,7 @@
 .login-page .form-inputs .remember-reset label {
     margin-top: 0.3rem;
     justify-content: space-between;
-    font-size: var(--fs-200);
+    font-size: var(--fs-100);
     font-weight: 400;
 }
 .login-page button.signin {
@@ -15,4 +15,5 @@
 .login-page p.signup {
     text-align: center;
     margin: 2rem 0;
+    font-size: var(--fs-200);
 }

@@ -15,6 +15,7 @@ function Authorization() {
                 <img src="/assets/hero.svg" alt="" />
             </div>
             <div className="routes">
+            <div className="logo mobile-logo"><a href="/home"><img src="/logo.svg" alt="" /></a></div>
                 <Routes>
                     <Route path="/login" element={<Login />} />
                     <Route path="/signup" element={<Signup />}/>
