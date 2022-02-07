@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import './Signup.css'
+import Authorization from './Authorization'
+import './Authorization.css'
 
 async function registerUser(data) {
     console.log(data)
@@ -77,81 +78,86 @@ function Signup() {
     }
 
     return (
-        <div className="signup-page flow">
-            <h1 className="page-title">Register</h1>
+        <div className="authorization grid">
+            <Authorization />
+            <div className="routes">
+                <div className="signup-page flow">
+                    <h1 className="page-title">Register</h1>
 
-            <form onSubmit={handleSubmit} className="form flow">
-                <h2 className="form-title">Manage all your lottery efficiently</h2>
-                <p className="form-heading">Let's get you all set up so you can verify your personal account and begin setting up your profile</p>
+                    <form onSubmit={handleSubmit} className="form flow">
+                        <h2 className="form-title">Manage all your lottery efficiently</h2>
+                        <p className="form-heading">Let's get you all set up so you can verify your personal account and begin setting up your profile</p>
 
-                { (Object.keys(formErrors).length === 0 && submitForm) ? (
-                    <div className="ui-message success">
-                        <p>Account created successfully!</p>
-                    </div>
-                ) : ''}
-                <div className="form-inputs flow">
-                    <div className="grid input-grid">
-                        <div className="input-group">
-                            <label htmlFor="first_name">First Name</label>
-                            <input name="first_name" type="text" value={formValues.first_name} onChange={handleChange} />
-                            <p className="ui-message error">{ formErrors && formErrors.first_name }</p>
-                        </div>
-                        <div className="input-group">
-                            <label htmlFor="last_name">Last Name</label>
-                            <input name="last_name" type="text" value={formValues.last_name} onChange={handleChange} />
-                            <p className="ui-message error">{ formErrors && formErrors.last_name }</p>
-                        </div>
-                    </div>
+                        { (Object.keys(formErrors).length === 0 && submitForm) ? (
+                            <div className="ui-message success">
+                                <p>Account created successfully!</p>
+                            </div>
+                        ) : ''}
+                        <div className="form-inputs flow">
+                            <div className="grid input-grid">
+                                <div className="input-group">
+                                    <label htmlFor="first_name">First Name</label>
+                                    <input name="first_name" type="text" value={formValues.first_name} onChange={handleChange} />
+                                    <p className="ui-message error">{ formErrors && formErrors.first_name }</p>
+                                </div>
+                                <div className="input-group">
+                                    <label htmlFor="last_name">Last Name</label>
+                                    <input name="last_name" type="text" value={formValues.last_name} onChange={handleChange} />
+                                    <p className="ui-message error">{ formErrors && formErrors.last_name }</p>
+                                </div>
+                            </div>
 
-                    <div className="grid input-grid">
-                        <div className="input-group">
-                            <label htmlFor="phone">Phone Number</label>
-                            <input name="phone" type="number" value={formValues.phone} onChange={handleChange} />
-                            <p className="ui-message error">{ formErrors && formErrors.phone }</p>
-                        </div>
-                        <div className="input-group">
-                            <label htmlFor="email">Email</label>
-                            <input name="email" type="email" value={formValues.email} onChange={handleChange} />
-                            <p className="ui-message error">{ formErrors && formErrors.email }</p>
-                        </div>
-                    </div>
+                            <div className="grid input-grid">
+                                <div className="input-group">
+                                    <label htmlFor="phone">Phone Number</label>
+                                    <input name="phone" type="number" value={formValues.phone} onChange={handleChange} />
+                                    <p className="ui-message error">{ formErrors && formErrors.phone }</p>
+                                </div>
+                                <div className="input-group">
+                                    <label htmlFor="email">Email</label>
+                                    <input name="email" type="email" value={formValues.email} onChange={handleChange} />
+                                    <p className="ui-message error">{ formErrors && formErrors.email }</p>
+                                </div>
+                            </div>
 
-                    <div className="grid input-grid">
-                        <div className="input-group">
-                            <label htmlFor="password1">Password</label>
-                            <input name="password1" type="password" value={formValues.password1} onChange={handleChange} />
-                            <p className="ui-message error">{ formErrors && formErrors.password1 }</p>
+                            <div className="grid input-grid">
+                                <div className="input-group">
+                                    <label htmlFor="password1">Password</label>
+                                    <input name="password1" type="password" value={formValues.password1} onChange={handleChange} />
+                                    <p className="ui-message error">{ formErrors && formErrors.password1 }</p>
+                                </div>
+                                <div className="input-group">
+                                    <label htmlFor="password2">Confirm Password</label>
+                                    <input name="password2" type="password" value={formValues.password2} onChange={handleChange} />
+                                    <p className="ui-message error">{ formErrors && formErrors.password2 }</p>
+                                </div>
+                            </div>
                         </div>
-                        <div className="input-group">
-                            <label htmlFor="password2">Confirm Password</label>
-                            <input name="password2" type="password" value={formValues.password2} onChange={handleChange} />
-                            <p className="ui-message error">{ formErrors && formErrors.password2 }</p>
+
+
+                
+                        <div className="terms">
+                            <div>
+                                <label>
+                                    <input type="checkbox" />
+                                    Yes, I want to receive Lottery Display emails
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox" />
+                                    I agree to all the <a href="/terms-and-private-policy">Terms, Privacy Policy</a> and <a href="/fees">Fees</a>
+                                </label>
+                            </div>
                         </div>
-                    </div>
+
+                        {/* <input type="submit" value="Create Account" /> */}
+                        <button className="signup">Create Account</button>
+
+                        <p className="signin">Already have an account? <a href="/login">Login</a></p>
+                    </form>
                 </div>
-
-
-        
-                <div className="terms">
-                    <div>
-                        <label>
-                            <input type="checkbox" />
-                            Yes, I want to receive Lottery Display emails
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            <input type="checkbox" />
-                            I agree to all the <a href="/terms-and-private-policy">Terms, Privacy Policy</a> and <a href="/fees">Fees</a>
-                        </label>
-                    </div>
-                </div>
-
-                {/* <input type="submit" value="Create Account" /> */}
-                <button className="signup">Create Account</button>
-
-                <p className="signin">Already have an account? <a href="/auth/login">Login</a></p>
-            </form>
+            </div>
         </div>
     )
 }
