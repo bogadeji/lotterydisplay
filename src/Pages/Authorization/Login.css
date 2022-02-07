@@ -17,3 +17,16 @@
     margin: 2rem 0;
     font-size: var(--fs-200);
 }
+
+@media (max-width: 1024px) {
+    .login-page {
+        width: 70%;
+        /* --flow-space: 6rem; */
+    }
+}
+@media (max-width: 760px) {
+    .login-page {
+        width: 100%;
+        /* --flow-space: 6rem; */
+    }
+}
