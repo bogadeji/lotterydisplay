@@ -126,8 +126,10 @@ button {
   border: 1px solid hsl(var(--clr-primary));
   padding: 0.125em 2.2em;
   border-radius: 3px;
-  font-weight: var(--fw-reg);
+  font-weight: var(--fw-normal);
+  font-size: var(--fs-200);
   cursor: pointer;
+
 }
 
 /* Remove animations for people who turned them off */

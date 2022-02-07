@@ -10,8 +10,8 @@ function ResetPassword() {
             <h1 className="page-title">Reset Password</h1>
 
             <form className="flow form">
-                <h2 className="form-title">Login to your account</h2>
-                <p className="form-heading">Thank you for getting back to Lottery Display, let's access our best recommendation for you</p>
+                <h2 className="form-title">Reset your password</h2>
+                <p className="form-heading">Enter your email address and we'll send you a link to reset your password</p>
                 <div className="form-inputs flow">
                     <div className="input-group">
                         <label>
