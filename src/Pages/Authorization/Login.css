@@ -6,11 +6,19 @@
 .login-page .form-inputs .remember-reset label {
     margin-top: 0.3rem;
     justify-content: space-between;
+    align-items: center;
+    align-content: center;
     font-size: var(--fs-100);
     font-weight: 400;
 }
+.login-page .form-inputs .remember-reset label {
+    display: flex;
+    justify-content: center;
+    margin-top: 0
+}
 .login-page button.signin {
     width: 100%;
+    margin-top: 1rem;
 }
 .login-page p.signup {
     text-align: center;
