@@ -7,6 +7,8 @@
   --clr-tertiary: 0 0% 51%;
   --clr-accent1: 214 18% 47%;
   --clr-accent2: 210 10% 62%;
+  --clr-success: green;
+  --clr-danger: red;
   /* hsl(208,13,54) */
 
   /* Font Sizes */
@@ -239,4 +241,14 @@ button {
   width: 100%;
   border-radius: 5px;
   border: 1px solid rgb(206,212,218)
+}
+
+.ui-message {
+  font-size: var(--fs-100);
+}
+.ui-message.success {
+  color: var(--clr-success);
+}
+.ui-message.error {
+  color: var(--clr-danger);
 }

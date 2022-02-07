@@ -94,12 +94,12 @@ function Signup() {
                         <div className="input-group">
                             <label htmlFor="first_name">First Name</label>
                             <input name="first_name" type="text" value={formValues.first_name} onChange={handleChange} />
-                            <p>{ formErrors && formErrors.first_name }</p>
+                            <p className="ui-message error">{ formErrors && formErrors.first_name }</p>
                         </div>
                         <div className="input-group">
                             <label htmlFor="last_name">Last Name</label>
                             <input name="last_name" type="text" value={formValues.last_name} onChange={handleChange} />
-                            <p>{ formErrors && formErrors.last_name }</p>
+                            <p className="ui-message error">{ formErrors && formErrors.last_name }</p>
                         </div>
                     </div>
 
@@ -107,12 +107,12 @@ function Signup() {
                         <div className="input-group">
                             <label htmlFor="phone">Phone Number</label>
                             <input name="phone" type="number" value={formValues.phone} onChange={handleChange} />
-                            <p>{ formErrors && formErrors.phone }</p>
+                            <p className="ui-message error">{ formErrors && formErrors.phone }</p>
                         </div>
                         <div className="input-group">
                             <label htmlFor="email">Email</label>
                             <input name="email" type="email" value={formValues.email} onChange={handleChange} />
-                            <p>{ formErrors && formErrors.email }</p>
+                            <p className="ui-message error">{ formErrors && formErrors.email }</p>
                         </div>
                     </div>
 
@@ -120,12 +120,12 @@ function Signup() {
                         <div className="input-group">
                             <label htmlFor="password1">Password</label>
                             <input name="password1" type="password" value={formValues.password1} onChange={handleChange} />
-                            <p>{ formErrors && formErrors.password1 }</p>
+                            <p className="ui-message error">{ formErrors && formErrors.password1 }</p>
                         </div>
                         <div className="input-group">
                             <label htmlFor="password2">Confirm Password</label>
                             <input name="password2" type="password" value={formValues.password2} onChange={handleChange} />
-                            <p>{ formErrors && formErrors.password2 }</p>
+                            <p className="ui-message error">{ formErrors && formErrors.password2 }</p>
                         </div>
                     </div>
                 </div>
