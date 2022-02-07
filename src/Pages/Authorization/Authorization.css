@@ -1,0 +1,59 @@
+/* @import url('../../index.css');/ */
+.authorization.grid {
+    min-height: 100vh;
+    display: grid;
+    /* grid-template-areas: 'nav main main main';
+     */
+     grid-template-columns: 2fr 5fr;
+
+}
+
+    .authorization-page {
+        color: #fff;
+        padding: 2rem;
+        background-color: hsl(var(--clr-primary));
+        --flow-space: 2rem;
+    }
+
+    .logo {
+        width: 150px
+    }
+    .routes {
+        margin: auto 6rem;
+        align-items: center;
+        justify-content: center;
+    }
+    /* .routes > * {
+        width: 50%
+    } */
+    .grid.input-grid {
+        grid-template-columns: repeat(2, 1fr);
+        --gap: 2rem;
+    }
+    .routes .page-title {
+        font-size: var(--fs-500);
+        color: hsl(var(--clr-secondary))
+    }
+    .routes form {
+        margin: 2rem 0;
+        --flow-space: 0.5rem;
+    }
+    .routes .form-title {
+        color: hsl(var(--clr-secondary));
+        font-size: var(--fs-300);
+    }
+    .routes .form-heading {
+        color: hsl(var(--clr-accent2));
+        font-size: var(--fs-200);
+    }
+    .routes .form-inputs {
+        margin: 1.5rem 0;
+        --flow-space: 1rem;
+    }
+    .routes .form-inputs label {
+        font-size: var(--fs-200);
+    }
+    .routes .form-inputs input {
+        color: hsl(var(--clr-accent2));
+        font-size: var(--fs-200);
+    }

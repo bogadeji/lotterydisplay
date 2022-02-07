@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";;
+import React, { useEffect, useState } from "react";
+import './Login.css';
 
 function Login() {
     const loginData = {
@@ -43,30 +44,31 @@ function Login() {
         return errors
     }
     return (
-        <div>
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
-                <h2>Login to your account</h2>
-                <p>Thank you for getting back to Lottery Display, let's access our best recommendation for you</p>
+        <div className="login-page flow">
+            <h1 className="page-title">Login</h1>
+            <form onSubmit={handleSubmit} className="flow form">
+                <h2 className="form-title">Login to your account</h2>
+                <p className="form-heading">Thank you for getting back to Lottery Display, let's access our best recommendation for you</p>
 
                 { (Object.keys(formErrors).length === 0 && submitForm) ? (
                     <div className="ui-message success">
                         <p>Login successfull!</p>
                     </div>
                 ) : ''}
-                <div>
+                <div className="form-inputs flow">
+                <div className="input-group">
                     <label>
                         Username
                         <input type="text" placeholder="Email or Phone Number" value={formValues.username} onChange={handleChange} />
                     </label>
                 </div>
-                <div>
+                <div className="input-group">
                     <label>
                         Password
                         <input type="text" placeholder="Password" value={formValues.password} onChange={handleChange} />
                     </label>
                 </div>
-                <div>
+                <div className="remember-reset flex">
                     <div>
                         <label>
                             <input type="checkbox" />
@@ -77,10 +79,11 @@ function Login() {
                     <a href="/auth/reset-password">Reset Password?</a>
                 </div>
 
-                <input type="submit" value="Sign In" />
-                <button>Sign In</button>
+                {/* <input type="submit" value="Sign In" /> */}
+                <button className="signin">Sign In</button>
 
-                <p>Don't have an account yet? <a href="/auth/signup">Join Lottery Display</a></p>
+                <p className="signup">Don't have an account yet? <a href="/auth/signup">Join Lottery Display</a></p>
+                </div>
             </form>
         </div>
     )

@@ -1,0 +1,18 @@
+.login-page {
+    width: 50%;
+    /* --flow-space: 6rem; */
+}
+.login-page .remember-reset,
+.login-page .form-inputs .remember-reset label {
+    margin-top: 0.3rem;
+    justify-content: space-between;
+    font-size: var(--fs-200);
+    font-weight: 400;
+}
+.login-page button.signin {
+    width: 100%;
+}
+.login-page p.signup {
+    text-align: center;
+    margin: 2rem 0;
+}

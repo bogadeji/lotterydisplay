@@ -1,13 +1,241 @@
+
+:root {
+    
+  /* Colors */
+
+  --clr-primary: 214 100% 50%;
+  --clr-secondary: 211 21% 39%;
+  --clr-tertiary: 0 0% 51%;
+  --clr-accent1: 214 18% 47%;
+  --clr-accent2: 210 10% 62%;
+  /* hsl(208,13,54) */
+
+  /* Font Sizes */
+      /* consider using clamp for your custom fonts sizes
+      Also, consider using vmin and vmax
+      */
+      --fs-900: clamp(5rem, 7vw + 1rem, 9.375rem);
+      --fs-800: clamp(2rem, 6vw + 1rem, 3.5rem);
+      --fs-700: clamp(1.8rem, 5vw + 1rem, 2.3rem);
+      --fs-600: clamp(1.5rem, 4vw + 1rem, 1.75rem);
+      --fs-500: clamp(0.9375rem, 3vw + 1rem, 1.5rem);
+      --fs-400: clamp(0.625rem, 1vw + 0.7625rem, 1.125rem);
+      --fs-300: clamp(0.725rem, 0.5vw + 1rem, 1rem);
+      --fs-200: clamp(0.6rem, 0.5vw + 0.5rem, 0.875rem);
+      --fs-100: clamp(0.5rem, 0.5vw + 0.3rem, 0.625rem);
+
+  /* Font families */
+  /* --ff-sans-cond: 'Montserrat', sans-serif; */
+
+  /* Font weight */
+  --fw-normal: 400;
+  --fw-reg: 500;
+  --fw-bold: 600;
+  --fw-bolder: 700;
+}
+
+/* ------------------------- */
+/* ~~~~~~~ Reset ~~~~~~~ */
+/* ------------------------- */
+
+/* Box sizing */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset Margins */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: var(--font-normal);
+}
+
+/*  Set up the body */
 body {
+  font-size: var(--fs-300);
+  font-weight: var(--fw-reg);
+  background-color: hsl(var(--clr-light));
+  color: hsl(var(--clr-dark));
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+}
+
+/* Make forms easier to work with  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+
+a {
+  color: hsl(var(--clr-primary));
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+button {
+  background-color: hsl(var(--clr-primary));
+  color: #fff;
+  border: 1px solid hsl(var(--clr-primary));
+  padding: 0.125em 2.2em;
+  border-radius: 3px;
+  font-weight: var(--fw-reg);
+}
+
+/* Remove animations for people who turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important
+  }
+}
+
+/* ------------------------- */
+/* ~~~~~~~ Utilities ~~~~~~~ */
+/* ------------------------- */
+
+/* general */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.d-block {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.flow--space-small {
+  --flow-space: 0.5rem
+}
+
+.container {
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.sr-only { /*screen reader only */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+/* colors */
+
+.bg-primary { background-color: hsl(var(--clr-primary))}
+.bg-secondary { background-color: hsl(var(--clr-secondary))}
+.bg-tertiary { background-color: hsl(var(--clr-tertiary))}
+.bg-accent1 { background-color: hsl(var(--clr-accent1))}
+.bg-accent2 { background-color: hsl(var(--clr-accent2))}
+
+.text-primary { color: hsl(var(--clr-primary))}
+.text-secondary { color: hsl(var(--clr-secondary))}
+.text-tertiary { color: hsl(var(--clr-tertiary))}
+.text-accent1 { color: hsl(var(--clr-accent1))}
+.text-accent2 { color: hsl(var(--clr-accent2))}
+
+/* typography */
+
+.fw-reg { font-weight: var(--fw-reg);}
+.fw-bold { font-weight: var(--fw-bold);}
+.fw-bolder { font-weight: var(--fw-bolder);}
+
+.uppercase { text-transform: uppercase; }
+
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
+
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+  line-height: 1.1;
+}
+
+
+.input-group label {
+  display: block;
+  font-weight: 500;
+}
+.input-group input {
+  height: 40px;
+  height: calc(1.5em + 0.75rem + 2px);
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid rgb(206,212,218)
 }
